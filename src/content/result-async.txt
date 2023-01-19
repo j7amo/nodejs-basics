@@ -1,1 +1,1 @@
-Here is the result: first text file, second text file
+The result: first text file - second text fileThe result: first text file - second text file
