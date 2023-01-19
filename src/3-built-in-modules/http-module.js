@@ -9,6 +9,16 @@ const http = require('http');
 const server = http.createServer((req, res) => {
   if (req.url === '/') {
     res.write('Welcome to the homepage');
+    // "end" method MUST BE called ON EACH RESPONSE!!! It signals to the server that all the
+    // response headers and body have been sent. And server should consider this message complete.
+    // Because otherwise the browser will be waiting indefinitely for the server response...
+    // "end" method accepts optional parameters:
+    // - data - data to respond with(if specified then it is similar to
+    // calling "res.write(data, encoding)");
+    // - encoding - if we want to respond with a string, then we need to specify encoding;
+    // - callback - function that is called when response stream finished.
+    // if we pass all these parameters to "end" method then it is similar to calling:
+    // "res.write(data, encoding)" and then "res.end(callback)"
     res.end();
 
     // we need this return in order to get rid of "ERR_STREAM_WRITE_AFTER_END" error.
