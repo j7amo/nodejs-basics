@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +20,8 @@
     "tabWidth": 2,
     "semi": true,
     "singleQuote": true
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }
